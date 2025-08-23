@@ -132,6 +132,7 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Implement token-based authentication and create the login endpoint (/api-token-auth/).
 #Set up Django REST Framework in settings.py.
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
