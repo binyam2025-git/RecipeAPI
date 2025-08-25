@@ -1,6 +1,7 @@
 # recipes/views.py
 # Implement object-level permissions (IsOwnerOrReadOnly) to secure recipe updates and deletions.
 # Add filtering capabilities to the RecipeViewSet to allow filtering by category_id
+# Integrate the SearchFilter to enable keyword searching across recipe titles, descriptions, and ingredients.
 from rest_framework import viewsets, permissions, generics
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
