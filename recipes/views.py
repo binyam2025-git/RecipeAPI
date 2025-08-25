@@ -1,4 +1,6 @@
 # recipes/views.py
+# Implement object-level permissions (IsOwnerOrReadOnly) to secure recipe updates and deletions.
+# Add filtering capabilities to the RecipeViewSet to allow filtering by category_id
 from rest_framework import viewsets, permissions, generics
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
@@ -6,6 +8,10 @@ from django_filters.rest_framework import DjangoFilterBackend
 from .models import Category, Recipe
 from .serializers import CategorySerializer, RecipeSerializer
 from .permissions import IsOwnerOrReadOnly
+#from .permissions import IsOwnerOrReadOnly
+#from .models import Category, Recipe
+#from .serializers import CategorySerializer, RecipeSerializer
+
 
 class StandardResultsSetPagination(PageNumberPagination):
     page_size = 10
