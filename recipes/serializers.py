@@ -1,4 +1,6 @@
 # recipes/serializers.py
+#Enhance error handling with custom exceptions and responses for specific validation failures.
+
 from rest_framework import serializers
 from .models import Category, Recipe
 from django.contrib.auth.models import User
