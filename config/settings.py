@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_filters',
     'recipes',
     'rest_framework.authtoken',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -141,8 +142,11 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+# config/settings.py
+AUTH_USER_MODEL = 'accounts.CustomUser'

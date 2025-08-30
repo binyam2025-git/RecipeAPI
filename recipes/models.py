@@ -2,6 +2,7 @@
 # recipes/models.py
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -25,9 +26,10 @@ class Recipe(models.Model):
         null=True, blank=True
     )
     owner = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         related_name='recipes',
         on_delete=models.CASCADE
+        #User,
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
